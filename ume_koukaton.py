@@ -517,6 +517,14 @@ def main():
             if bos.life <= 0:
                 exps.add(Explosion(bos, 200))
                 bos.kill()
+                pg.mixer.music.stop()
+                font = pg.font.Font(None, 100)
+                txt = font.render("GAME CLEAR", True, (255, 215, 0))
+                rect = txt.get_rect(center=(WIDTH//2, HEIGHT//2))
+                screen.blit(txt, rect)
+                pg.display.update()
+                time.sleep(3)
+                return
 
         for emy, hit_eggs in pg.sprite.groupcollide(emys, eggs, False, True).items():
             total_damage = 0
