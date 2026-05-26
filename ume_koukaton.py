@@ -161,13 +161,10 @@ class Egg(pg.sprite.Sprite):
     def __init__(self, bird: Bird, color_name: str):  
         """
         卵画像Surfaceを生成する
- main
         引数 egg：卵を放つこうかとん
         卵を放つとき効果音が鳴る
-=======
         引数1 bird：卵を放つこうかとん
         引数2 color_name：卵の色
- main
         """
         self.snd = pg.mixer.Sound(f"Sound effects/ショット.mp3") #卵を打つときの効果音
         self.snd.play(maxtime=100)
@@ -375,7 +372,6 @@ class Score:
         screen.blit(self.image, self.rect)
 
 
- main
 #class Beam(pg.sprite.Sprite):
  
     #def __init__(self,bird: Bird):
@@ -429,7 +425,7 @@ class Item(pg.sprite.Sprite):
         self.rect.move_ip(0, self.vy)
         if check_bound(self.rect) != (True, True):
             self.kill()
- main
+ 
 
 
 def main():
@@ -438,14 +434,10 @@ def main():
     bg_img = pg.image.load(f"fig/pg_bg.jpg")
     score = Score()
     life = Life(3)
- main
     pg.mixer.music.load(f"Sound effects/Synthetic_Solitude.mp3")#通常BGM
     pg.mixer.music.play(loops=-1)
-=======
     boss_value = 1
     boss_life = 20
- main
-
     bird = Bird(3, (WIDTH/2, HEIGHT-200))
     bombs = pg.sprite.Group()
     eggs = pg.sprite.Group()
